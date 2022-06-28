@@ -34,7 +34,7 @@ import org.bson.Document
 class MainActivity : AppCompatActivity() {
 
     //unique app id
-    private var appId = "application-0-wjyfy"   //"application-0-civum"
+    private var appId = //TODO "provide monogodb app id"
 
 
     //MongoDb fields
