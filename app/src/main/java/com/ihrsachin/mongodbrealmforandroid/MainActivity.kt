@@ -34,7 +34,8 @@ import org.bson.Document
 class MainActivity : AppCompatActivity() {
 
     //unique app id
-    private var appId = "application-0-civum"
+    private var appId = "application-0-wjyfy"   //"application-0-civum"
+
 
     //MongoDb fields
     private var app: App? = null
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 //                countData()           //count new sample data
 //                deleteData()          //delete all
             } else {
-                showStatus("User Failed to Login")
+                showStatus("User Failed to Login: ${result.error}")
             }
         }
 
