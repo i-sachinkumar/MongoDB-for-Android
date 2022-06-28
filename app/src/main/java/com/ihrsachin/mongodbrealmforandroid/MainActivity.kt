@@ -34,7 +34,7 @@ import org.bson.Document
 class MainActivity : AppCompatActivity() {
 
     //unique app id
-    private var appId = "TODO"
+    private var appId = "application-0-wjyfy"
 
 
     //MongoDb fields
