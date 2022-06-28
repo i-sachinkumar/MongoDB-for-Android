@@ -33,7 +33,7 @@
     -> where you can add your teammate to collaborate. <br>
     -> create new database [with "browse collections" button] (see further instructions) <br>
     -> create an app in "App services" tab <br>
- <img src="images/20.png"  width="60%"/>
+ <img src="images/20.png"/>
  
  <br>
  7. Go to "Browse Collections", will get following page
@@ -54,7 +54,7 @@
  <br>
  11. App is created, you can see this page <br>
  Now you have to add rule for data access and user authentication method
- <img src="images/21.png"  width="60%"/>
+ <img src="images/21.png"/>
 
   <br>
  12. Go to "rule", Yo can add customized rule for your data, for testing purpose, i'm giving access to everyone to read and write
