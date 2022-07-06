@@ -7,12 +7,20 @@
     android:id="@+id/main_layout"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/acc_meter_reading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bniniin gn"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/test_btn"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/acc_meter_reading">
 
         <LinearLayout
             android:id="@+id/container"

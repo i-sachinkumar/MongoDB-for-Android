@@ -10,6 +10,7 @@ package com.ihrsachin.mongodbrealmforandroid
  * Database Query:
  * Docs : https://www.mongodb.com/docs/realm/sdk/java/examples/mongodb-remote-access/
  */
+
 import android.os.Bundle
 import android.util.Log
 import android.view.View.GONE
@@ -29,9 +30,16 @@ import io.realm.mongodb.mongo.MongoCollection
 import io.realm.mongodb.mongo.MongoDatabase
 import io.realm.mongodb.mongo.options.InsertManyResult
 import org.bson.Document
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        init {
+            System.loadLibrary("mongodbrealmforandroid")
+        }
+    }
 
     //unique app id
     private var appId = "application-0-wjyfy"
@@ -50,6 +58,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var runTestBtn : Button
     lateinit var readBtn : Button
     lateinit var progressBar: ProgressBar
+    lateinit var accMeterReading : TextView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,10 +70,19 @@ class MainActivity : AppCompatActivity() {
         Realm.init(this)
 
 
+
         containerView = findViewById(R.id.container)
         runTestBtn = findViewById(R.id.test_btn)
         readBtn = findViewById(R.id.read_btn)
         progressBar = findViewById(R.id.progress_bar)
+        accMeterReading = findViewById(R.id.acc_meter_reading)
+
+
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            accMeterReading.text = AccelerometerJNI.updateText()
+//        }, 100)
+
+        accMeterReading.text = AccelerometerJNI.accelerometer()
 
 
         //building app with app id
@@ -100,16 +119,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        runTestBtn.setOnClickListener{
+        runTestBtn.setOnClickListener {
             insertData()
         }
-        readBtn.setOnClickListener{
+        readBtn.setOnClickListener {
             readData()
         }
 
         //val viewTreeObserver: ViewTreeObserver = main_layout.viewTreeObserver
-
-
 
 
         /**
@@ -182,6 +199,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
 
 
     // reading with condition: data == sample6

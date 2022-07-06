@@ -18,6 +18,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
     }
 
     buildTypes {
@@ -33,11 +38,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    ndkVersion '21.4.7075529'
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.18.1'
+        }
+    }
 }
 
 realm {
     syncEnabled = true
 }
+
 
 dependencies {
     implementation 'io.realm:realm-gradle-plugin:10.11.0'
